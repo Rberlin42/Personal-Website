@@ -1,6 +1,9 @@
 body, html {
 	margin: 0px;
 	padding: 0px;
+	font-family: "Arial Black";
+	text-align: center;
+	color: white;
 }
 
 header {
@@ -15,9 +18,6 @@ header {
 
 nav {
 	position: static;
-	text-align: center;
-	font-family: "Arial Black";
-	color: white;
 }
 
 .nav li {
@@ -35,4 +35,19 @@ nav {
 
 a:link{
 	text-decoration: none;
+}
+
+#title-block{
+	position: absolute;
+  	top: 30%;
+  	left: 50%;
+  	transform: translateY(-50%);
+  	transform: translateX(-50%);
+  	font-size: 2em;
+}
+
+.down-arrow{
+	position:absolute;
+	bottom: 50px;
+	margin: auto;
 }
