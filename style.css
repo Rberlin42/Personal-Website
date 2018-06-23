@@ -3,19 +3,17 @@ body, html {
 	padding: 0px;
 	font-family: "Arial Black";
 	text-align: center;
-	color: white;
 }
 
 header {
-	position: absolute;
-	top: 0px;
 	width: 100%;
-	min-height: 100%;
+	min-height: 100vh;
 	overflow: auto;
 	margin: 0px;
 	padding: 0px;
 	background-image: url("images/background.jpg");
 	background-repeat: no-repeat;
+	color: white;
 }
 
 nav {
