@@ -75,9 +75,9 @@ section{
 }
 
 #profile{
-	margin: 3%;
+	margin: 5% 5% 5% 15%;
 	float: left;
-	width: 30%;
+	width: 25%;
 }
 
 .title{
@@ -91,6 +91,15 @@ section{
 
 #description{
 	color: #AAAAAA;
-	padding: 50px;
+	padding: 10% 15%;
 }
 
+.links{
+	color: white;
+	font-size: 2em;
+}
+
+.links li{
+	margin: 3%;
+	display: inline-block;
+}
