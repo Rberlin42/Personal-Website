@@ -21,7 +21,7 @@
 
 </head>
 
-<body>
+<body onscroll="styleChange()" onload="setSectionLocations()" onresize="setSectionLocations()">
 
 	<!-- header section 
 	==============================================-->
@@ -29,7 +29,7 @@
 	<!-- navigation -->
 		<nav>
 			<ul class="nav">
-                <li><a href="#about">About</a></li>
+                <li><a class="selected" href="#about">About</a></li>
                 <li><a href="#resume">Resume</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#hobbies">Hobbies</a></li>
@@ -100,6 +100,9 @@
   							<li>CS GPA: 3.75/4.00</li>
   							<p>
   						</ul>
+  					</li>
+  					<li>
+  						<h3>Syosset High School</h3>
   					</li>
   				</ul>
   			</div>
