@@ -29,10 +29,14 @@ function styleChange(){
 
 	//remove display of nav if it's over the main title
 	var title = document.getElementById("title-block");
-	if(scroll >= title.offsetTop && scroll < section_locations[0])
-		nav.style.display = "none";
-	else
-		nav.style.display = "block";
+	if(scroll >= title.offsetTop && scroll < section_locations[0]){
+		nav.style.visibility = "hidden";
+		nav.style.opacity = "0";
+	}
+	else{
+		nav.style.visibility = "visible";
+		nav.style.opacity = "1";
+	}
 
 	//set background of nav
 	if(scroll >= section_locations[0])
