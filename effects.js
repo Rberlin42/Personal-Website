@@ -56,4 +56,23 @@ function styleChange(){
 			links[section_locations.length-1].className = "selected";
 		else
 			links[section_locations.length-1].className = "";
+
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+//duration / dist = interval
+async function smoothScroll(dest, duration){
+	var target = section_locations[dest];
+	var scroll = document.getElementsByTagName("html")[0].scrollTop;
+	var delta = (target - scroll) / (duration / 5);
+
+	for(var i = 0; i < duration / 5; i++){
+		scroll += delta;
+		window.scrollTo(0, scroll);
+		await sleep(5);
+	}
+	window.scrollTo(0, section_locations[dest]);
 }

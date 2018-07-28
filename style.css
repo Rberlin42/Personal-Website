@@ -21,7 +21,6 @@ nav {
 
 a{
 	transition: color .4s;
-
 }
 
 a:visited{
@@ -30,6 +29,7 @@ a:visited{
 
 a:hover {
 	color: black;
+	cursor: pointer;
 }
 
 a:link{
@@ -143,6 +143,7 @@ section{
 #title-block h1{
 	text-shadow: 0px 1px 3px rgba(0, 0, 0, .8);
 	font-size: 7em;
+	padding-top: 25px;
 }
 
 #title-block h3{
