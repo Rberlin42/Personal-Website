@@ -63,7 +63,7 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-//duration / dist = interval
+//Scroll to the destination over the corse of duration (ms)
 async function smoothScroll(dest, duration){
 	var target = section_locations[dest];
 	var scroll = document.getElementsByTagName("html")[0].scrollTop;

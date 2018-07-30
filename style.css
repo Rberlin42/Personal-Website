@@ -67,11 +67,11 @@ section{
 }
 
 .selected{
-	color: rgb(50, 140, 160);
+	color: rgb(20, 180, 185);
 }
 
 .selected:visited{
-	color: rgb(50, 140, 160);
+	color: rgb(20, 180, 185);
 }
 
 .selected:hover{
@@ -96,8 +96,9 @@ section{
 }
 
 .subtitle{
+	color: rgb(45, 45, 45);
 	margin: 20px;
-	text-decoration: underline rgb(50, 140, 160);
+	text-decoration: underline rgb(20, 180, 185);
 	text-align: center;
 }
 
@@ -127,7 +128,17 @@ section{
 }
 
 .outer-list li{
-	display: inline-block;
+	list-style-type: none;
+	margin-top: 50px;
+}
+
+.inner-list li{
+	list-style-type: circle;
+	margin: 0px;
+}
+
+.indent{
+	margin-left: 50px;
 }
 
 
@@ -163,6 +174,7 @@ section{
 ======================================================= */
 #about{
 	background-color: rgb(45, 45, 45);
+	text-align: center;
 }
 
 #about .title{
@@ -174,14 +186,25 @@ section{
 	float: left;
 	width: 25%;
 }
+#description{
+	padding: 10% 15%;
+}
 
 /* Resume
 ======================================================= */
-#about {
-	text-align: center;
+#resume h3{
+	color: rgb(45, 45, 45);
+	margin-bottom: 0px;
 }
 
-#description{
-	padding: 10% 15%;
+#resume p{
+	margin-top: 0px;
+}
+#resume .indent p{
+	margin-top: 1em;
+}
+
+#resume span{
+	text-align: center;
 }
 
