@@ -130,6 +130,7 @@ section{
 .outer-list li{
 	list-style-type: none;
 	margin-top: 50px;
+	padding: 0% 5%;
 }
 
 .inner-list li{
