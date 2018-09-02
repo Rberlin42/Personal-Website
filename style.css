@@ -102,6 +102,10 @@ section{
 	text-align: center;
 }
 
+.subsection{
+	margin-bottom: 75px;
+}
+
 .links{
 	color: white;
 	font-size: 2em;
@@ -114,7 +118,9 @@ section{
 
 .column {
     float: left;
-    width: 50%;
+    width: 40%;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 .row:after {
@@ -123,7 +129,12 @@ section{
     clear: both;
 }
 
+.row{
+	margin-top: 50px;
+}
+
 .vr{
+	width: 39%;
 	border-right: 1px solid #BBBBBB;
 }
 
@@ -133,7 +144,12 @@ section{
 	padding: 0% 5%;
 }
 
+.outer-list p{
+	width: 75%;
+}
+
 .inner-list li{
+	display: list-item;
 	list-style-type: circle;
 	margin: 0px;
 	padding: 0px;
