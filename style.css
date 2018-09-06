@@ -21,6 +21,7 @@ nav {
 
 a{
 	transition: color .4s;
+	color: white;
 }
 
 a:visited{
@@ -60,8 +61,12 @@ section{
 }
 
 footer{
+	color: white;
 	width: 100%;
 	background-color: rgb(45, 45, 45);
+	overflow: auto;
+	margin: 0px;
+	padding: 0px;
 }
 
 /* navigation
@@ -115,6 +120,10 @@ footer{
 	color: white;
 	font-size: 2em;
 	text-align: center;
+}
+
+.links ul{
+	padding: 0px;
 }
 
 .links li{
@@ -279,10 +288,25 @@ footer{
 	text-align: left;
 }
 
-#skills 
-}
-
-/* Footer
+/* Contact
 ======================================================= */
 
+#contact h1{
+	margin: 50px;
+}
+
+#contact-info{
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	width: 50%;
+	margin: auto;
+	border: 2px solid rgb(20, 180, 185);
+	border-radius: 3px;
+}
+
+#contact span{
+	text-align: center;
+	margin: 25px;
+}
 
