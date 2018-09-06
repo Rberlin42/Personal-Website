@@ -109,6 +109,7 @@ section{
 .links{
 	color: white;
 	font-size: 2em;
+	text-align: center;
 }
 
 .links li{
@@ -192,7 +193,7 @@ section{
 ======================================================= */
 #about{
 	background-color: rgb(45, 45, 45);
-	text-align: center;
+
 }
 
 #about .title{
@@ -201,12 +202,12 @@ section{
 
 
 #profile{
-	margin: 3% 5% 5% 15%;
+	margin: 3% 3% 3% 15%;
 	float: left;
-	width: 15%;
+	width: 10%;
 }
 #description{
-	padding: 10% 15%;
+	padding: 2% 15%;
 }
 
 /* Resume
@@ -226,4 +227,19 @@ section{
 #resume span{
 	text-align: center;
 }
+
+.language{
+	width: 20%;
+	margin: auto;
+	background-color: blue;
+	border: 2px solid black;
+
+}
+
+.language-container{
+	margin-top: 50px;
+	margin-right: 10%;
+	margin-left: 10%;
+}
+
 
