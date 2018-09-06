@@ -76,3 +76,13 @@ async function smoothScroll(dest, duration){
 	}
 	window.scrollTo(0, section_locations[dest]);
 }
+
+//open a new tab with the resume
+function downloadResume(){
+	link = document.createElement("a");
+	link.setAttribute("href", "Resume.pdf");
+	link.setAttribute("target", "_blank");
+	link.click();
+}
+
+
