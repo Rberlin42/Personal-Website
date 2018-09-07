@@ -71,7 +71,6 @@ function sleep(ms) {
 async function smoothScroll(dest, duration){
 	var target = section_locations[dest];
 	var scroll = document.getElementsByTagName("html")[0].scrollTop;
-	console.log(section_locations);
 	var delta = (target - scroll) / (duration / 5);
 
 	for(var i = 0; i < duration / 5; i++){
