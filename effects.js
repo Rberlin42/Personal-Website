@@ -4,6 +4,7 @@ var section_locations = [];
 function init(){
 	setSectionLocations();
 	setBarWidths();
+	startBackground();
 }
 
 /* Called onload and on resize.

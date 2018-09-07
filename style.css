@@ -43,7 +43,7 @@ header {
 	overflow: auto;
 	margin: 0px;
 	padding: 0px;
-	background-color: #000a1c;
+	background-color: #000714;
 	color: white;
 	font-family: "Arial Black";
 	font-weight: normal;
@@ -66,6 +66,12 @@ footer{
 	overflow: auto;
 	margin: 0px;
 	padding: 0px;
+}
+
+canvas{
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 
 /* navigation
