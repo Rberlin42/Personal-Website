@@ -1,6 +1,11 @@
 //stores the pixel height location of each section in the order they appear
 var section_locations = [];
 
+function init(){
+	setSectionLocations();
+	setBarWidths();
+}
+
 /* Called onload and on resize.
 Sets variables to store the pixel locations of different sections.
 Calls styleChange to change the style if we scrolled into a new section */
@@ -16,6 +21,8 @@ function setSectionLocations(){
 		section_locations.push(height);
 		height += sections[i].offsetHeight;
 	}
+	//footer
+	section_locations.push(height);
 
 	//change the style
 	styleChange();
@@ -52,10 +59,6 @@ function styleChange(){
 		else
 			links[i].className = "";
 	}
-	if(scroll >= section_locations[section_locations.length-1])
-			links[section_locations.length-1].className = "selected";
-		else
-			links[section_locations.length-1].className = "";
 
 }
 
@@ -67,6 +70,7 @@ function sleep(ms) {
 async function smoothScroll(dest, duration){
 	var target = section_locations[dest];
 	var scroll = document.getElementsByTagName("html")[0].scrollTop;
+	console.log(section_locations);
 	var delta = (target - scroll) / (duration / 5);
 
 	for(var i = 0; i < duration / 5; i++){
@@ -83,6 +87,14 @@ function downloadResume(){
 	link.setAttribute("href", "Resume.pdf");
 	link.setAttribute("target", "_blank");
 	link.click();
+}
+
+//sets the width of the percents in the skills table
+function setBarWidths(){
+	rows = document.getElementsByClassName("percent");
+	for(var i = 0; i < rows.length; i++){
+		rows[i].style.width = "" + rows[i].innerHTML;
+	}
 }
 
 
