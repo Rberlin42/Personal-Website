@@ -87,8 +87,8 @@ function drawNet(){
 function update(){
 	var width = header.offsetWidth;
 	var height = header.offsetHeight;
-	canvas.style.width = width;
-	canvas.style.height = height;
+	canvas.width = width;
+	canvas.height = height;
 	var board = canvas.getContext("2d");
 
 	//update ball pos
@@ -99,10 +99,6 @@ function update(){
 		}
 	}
 
-	//too many points
-	while(points.length > calcNumPoints()){
-		points.pop();
-	}
 	//too few points
 	while(points.length < calcNumPoints()){
 		points.push(new Point());

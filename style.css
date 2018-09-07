@@ -187,6 +187,7 @@ canvas{
   	margin: auto;
   	margin-top: 15%;
   	margin-bottom: 80px;
+  	position: relative;
 }
 
 #title-block h1{
@@ -205,6 +206,7 @@ canvas{
 #down-arrow{
 	margin: auto;
 	font-size: 35px;
+	position: relative;
 }
 
 
