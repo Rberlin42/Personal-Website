@@ -3,12 +3,11 @@ var canvas;
 
 var width;
 var height;
-const MAX_DIST = 100;
 var color = "rgb(20, 180, 185)";
-var lineColor = "rgba(20, 180, 185, .5)";
 
 var board;
 var points = [];
+var lines = [];
 
 function startBackground(){
 	header = document.getElementsByTagName("header")[0];
@@ -53,43 +52,57 @@ function Point(){
 			return false;
 		return true;
 	}
+
+	this.equals = function(p){
+		return this.x == p.x && this.y == p.y && this.speed == p.speed && this.direction == p.direction && this.radius == p.radius;
+	}
+
+}
+
+//returns true if the line already exists in lines
+function lineExists(p1, p2){	
+	for(var i = 0; i < lines.length; i++){
+		if(p1.equals(lines[i].p1) && p2.equals(lines[i].p2))
+			return true;
+		if(p1.equals(lines[i].p2) && p2.equals(lines[i].p1))
+			return true;
+	}
+	return false;
+}
+
+function Line(p1, p2){
+	this.p1 = p1;
+	this.p2 = p2;
+	this.alpha = 0;
+	this.aDelta = .02;
+	this.connected = false;
+
+	this.draw = function(){
+		board.strokeStyle = "rgba(20, 180, 185, " + this.alpha + ")";
+		board.beginPath();
+		board.moveTo(this.p1.x, this.p1.y);
+		board.lineTo(this.p2.x, this.p2.y);
+		board.stroke();
+	}
+
+	this.update = function(){
+		if(this.connected && dist(this.p1, this.p2) > 200)
+			this.connected = false;
+		if(!this.connected && dist(this.p1, this.p2) <= 100)
+			this.connected = true;
+
+		if(this.connected && this.alpha < .5)
+			this.alpha += this.aDelta;
+		if(!this.connected && this.alpha > 0)
+			this.alpha -= this.aDelta;
+	}
 }
 
 function dist(p1, p2){
 	return Math.sqrt(Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2))
 }
 
-function drawLine(p1, p2){
-	board.fillStyle = color;
-	board.strokeStyle = lineColor;
-	board.beginPath();
-	board.moveTo(p1.x, p1.y);
-	board.lineTo(p2.x, p2.y);
-	board.stroke();
-}
-
-function drawNet(){
-	//loop through all pairs
-	for(var i = 0; i < points.length-1; i++){
-		for(var j = i+1; j < points.length; j++){
-			var p1 = points[i];
-			var p2 = points[j];
-
-			//check if we are close enough
-			if(dist(p1, p2) <= MAX_DIST){
-				drawLine(p1, p2);
-			}
-		}
-	}
-}
-
-
 function update(){
-	var width = header.offsetWidth;
-	var height = header.offsetHeight;
-	canvas.width = width;
-	canvas.height = height;
-	var board = canvas.getContext("2d");
 
 	//update ball pos
 	for(var i = 0; i < points.length; i++){
@@ -101,15 +114,25 @@ function update(){
 
 	//too few points
 	while(points.length < calcNumPoints()){
-		points.push(new Point());
+		var p = new Point();
+		points.push(p);
+		for(var i = 0; i < points.length-1; i++)
+			lines.push(new Line(p, points[i]));
 	}
 
-	//draw
+	//remove lines
+	for(var i = 0; i < lines.length; i++)
+		if((lines[i].p1.y < 0 || lines[i].p1.y > height || lines[i].p1.x < 0 || lines[i].p1.x > width) || (lines[i].p2.y < 0 || lines[i].p2.y > height || lines[i].p2.x < 0 || lines[i].p2.x > width))
+			lines.splice(i--, 1);
+
+	//draw points
 	board.clearRect(0, 0, width, height);
-	for(var i = 0; i < points.length; i++){
+	for(var i = 0; i < points.length; i++)
 		points[i].draw();
+	//update and draw lines
+	for(var i = 0; i < lines.length; i++){
+		lines[i].update();
+		lines[i].draw();
 	}
 
-	//draw network
-	drawNet();
 }
