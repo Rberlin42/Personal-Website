@@ -24,7 +24,7 @@ function startBackground(){
 }
 
 function calcNumPoints(){
-	return width*height/7500;
+	return width*height/15000;
 }
 
 function Point(){
@@ -57,17 +57,6 @@ function Point(){
 		return this.x == p.x && this.y == p.y && this.speed == p.speed && this.direction == p.direction && this.radius == p.radius;
 	}
 
-}
-
-//returns true if the line already exists in lines
-function lineExists(p1, p2){	
-	for(var i = 0; i < lines.length; i++){
-		if(p1.equals(lines[i].p1) && p2.equals(lines[i].p2))
-			return true;
-		if(p1.equals(lines[i].p2) && p2.equals(lines[i].p1))
-			return true;
-	}
-	return false;
 }
 
 function Line(p1, p2){
@@ -120,17 +109,16 @@ function update(){
 			lines.push(new Line(p, points[i]));
 	}
 
-	//remove lines
-	for(var i = 0; i < lines.length; i++)
-		if((lines[i].p1.y < 0 || lines[i].p1.y > height || lines[i].p1.x < 0 || lines[i].p1.x > width) || (lines[i].p2.y < 0 || lines[i].p2.y > height || lines[i].p2.x < 0 || lines[i].p2.x > width))
-			lines.splice(i--, 1);
-
 	//draw points
 	board.clearRect(0, 0, width, height);
 	for(var i = 0; i < points.length; i++)
 		points[i].draw();
 	//update and draw lines
 	for(var i = 0; i < lines.length; i++){
+		if((lines[i].p1.y < 0 || lines[i].p1.y > height || lines[i].p1.x < 0 || lines[i].p1.x > width) || (lines[i].p2.y < 0 || lines[i].p2.y > height || lines[i].p2.x < 0 || lines[i].p2.x > width)){
+			lines.splice(i--, 1);
+			continue;
+		}
 		lines[i].update();
 		lines[i].draw();
 	}
