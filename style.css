@@ -166,6 +166,7 @@ p a:hover{
 }
 .inner-list{
 	margin: 0px;
+	margin-bottom: 16px;
 }
 
 .inner-list li{
@@ -173,11 +174,6 @@ p a:hover{
 	list-style-type: circle;
 	padding: 0px;
 }
-
-.indent{
-	margin-left: 50px;
-}
-
 
 /* Main page
 ======================================================= */
@@ -223,6 +219,7 @@ p a:hover{
 	margin: .5em 1em 0% 17%;
 	float: left;
 	width: 10%;
+	min-width: 100px;
 }
 #description{
 	padding: 0% 17% 2% 17%;
@@ -277,9 +274,6 @@ p a:hover{
 
 #resume p{
 	margin-top: 0px;
-}
-#resume .indent p{
-	margin-top: 1em;
 }
 
 #resume span{
@@ -346,8 +340,8 @@ p a:hover{
 }
 
 .overlay h3{
-	margin-top: 1.25vw;
-	margin-bottom: 1.25vw;
+	margin-top: 8%;
+	margin-bottom: 5%;
 }
 .project-block:hover .overlay{
 	height: 100%;
@@ -380,17 +374,83 @@ p a:hover{
 
 
 
-/* Responsive content for tablets
+/* Responsive content for tablet sizes
 ======================================================= */
 
-/* strech resume */
-@media only screen (max-width: 1200px){
+/* strech work experience, slightly about, skills, and contact */
+@media only screen and (max-width: 1200px){
+	.center{
+		width: 100%;
+	}
+	#profile{
+		margin-left: 10%;
+	}
 
+	#description{
+		padding-left: 10%;
+		padding-right: 10%;
+	}
+
+	#skills{
+		width: 75%;
+	}
+
+	#contact-info{
+		width: 60%;
+	}
 }
 
-/* Strech about and stack education */
-@media only screen (max-width: 1000px){
+/* Strech about, slight stretch skills and contact, stack education*/
+@media only screen and (max-width: 1000px){
+	#profile{
+		margin-left: 2%;
+	}
+	#description{
+		padding-left: 2%;
+		padding-right: 2%;
+	}
 
+	#skills{
+		width: 85%;
+	}
+
+	.school-container{
+		float: none;
+	    width: 100%;
+	    margin: auto;
+	    margin-bottom: 75px;
+	    text-align: center;
+	}
+	.school-left{
+		padding: 0px;
+		margin: 0px;
+	}
+	.school-right{
+		padding: 0px;
+		border: none;
+		margin: 0px;
+	}
+	#courses{
+		width: max-content;
+		margin: auto;
+		margin-bottom: 16px;
+		text-align: left;
+	}
+
+	#contact-info{
+		width: 70%;
+	}
+}
+
+/* Stretch skills and contact */
+@media only screen and (max-width: 800px){
+	#skills{
+		width: 100%;
+	}
+
+	#contact-info{
+		width: 80%;
+	}
 }
 
 
