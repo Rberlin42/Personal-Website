@@ -5,7 +5,7 @@ body, html {
 	padding: 0px;
 	font-family: "Optima";
 	font-weight: 100;
-	line-height: 1.6;
+	line-height: 1.7;
 }
 
 nav {
@@ -50,6 +50,8 @@ header {
 	text-align: center;
 	background-image: url("images/background.jpg");
 	background-size: cover;
+	display: flex;
+	justify-content: center;
 }
 
 section{
@@ -132,8 +134,15 @@ p a:hover{
 	text-align: center;
 }
 
+.center{
+	width: 80%;
+	max-width: 1250px; 
+	margin: auto;
+}
+
 .subsection{
 	margin-bottom: 75px;
+	clear: both;
 }
 
 .links{
@@ -151,42 +160,17 @@ p a:hover{
 	display: inline-block;
 }
 
-.column {
-    float: left;
-    width: 40%;
-    padding-left: 5%;
-    padding-right: 5%;
-}
-
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-.row{
-	margin-top: 50px;
-}
-
-.vr{
-	width: 39%;
-	border-right: 1px solid #BBBBBB;
-}
-
 .outer-list li{
 	list-style-type: none;
-	margin-top: 50px;
 	padding: 0% 5%;
 }
-
-.outer-list p{
-	width: 75%;
+.inner-list{
+	margin: 0px;
 }
 
 .inner-list li{
 	display: list-item;
 	list-style-type: circle;
-	margin: 0px;
 	padding: 0px;
 }
 
@@ -202,7 +186,6 @@ p a:hover{
   	margin: auto;
   	margin-top: 15%;
   	margin-bottom: 80px;
-  	position: relative;
 }
 
 #title-block h1{
@@ -221,7 +204,8 @@ p a:hover{
 #down-arrow{
 	margin: auto;
 	font-size: 35px;
-	position: relative;
+	position: absolute;
+	bottom: 50px;
 }
 
 
@@ -235,14 +219,13 @@ p a:hover{
 	color: white;
 }
 
-
 #profile{
-	margin: 3% 3% 3% 17%;
+	margin: .5em 1em 0% 17%;
 	float: left;
 	width: 10%;
 }
 #description{
-	padding: 2% 17%;
+	padding: 0% 17% 2% 17%;
 }
 
 /* Resume
@@ -264,6 +247,21 @@ p a:hover{
 	margin:auto;
 	margin-bottom: 100px;
 
+}
+
+.school-container{
+	float: left;
+    width: 50%;
+    margin-bottom: 75px;
+}
+
+.school-left{
+	margin-left: 20%;
+	padding-right: 5%;
+}
+.school-right{
+	padding-left: 5%;
+	border-left: 1px solid #BBBBBB;
 }
 
 #resume-header{
@@ -290,14 +288,18 @@ p a:hover{
 
 #skills{
 	border-collapse: collapse;
-	width: 40%;
+	width: 60%;
 	margin: auto;
 	margin-top: 30px;
-	text-align: left;
+
 }
 
 #skills .percent{
 	color: white;
+}
+
+#skills td:nth-child(odd){
+	text-align: center;
 }
 
 .percent{
@@ -310,23 +312,21 @@ p a:hover{
 
 #portfolio{
 	background-color: rgb(205, 213, 221);
+	text-align: center;
 }
 
 .project-block{
-	float: left;
+	display: inline-block;
 	color: white;
-	width: 17vw;
-	height: 17vw;
-	margin: 4%;
+	width: 20vw;
+	height: 20vw;
+	min-width: 300px;
+	min-height: 300px;
+	margin: 0px 3% 3% 3%;
 	position: relative;
 	background-color: rgb(199, 188, 226);
 }
-.project-block:nth-child(3n-1){
-	margin-left: 16.5%;
-}
-.project-block:nth-last-child(1){
-	margin-bottom: 150px;
-}
+
 .project-thumbnail{
 	display: block;
   	width: 100%;
@@ -344,8 +344,14 @@ p a:hover{
   	transition: .5s;
   	text-align: center;
 }
+
+.overlay h3{
+	margin-top: 1.25vw;
+	margin-bottom: 1.25vw;
+}
 .project-block:hover .overlay{
 	height: 100%;
+	overflow: auto;
 }
 
 
@@ -371,4 +377,20 @@ p a:hover{
 	text-align: center;
 	margin: 25px;
 }
+
+
+
+/* Responsive content for tablets
+======================================================= */
+
+/* strech resume */
+@media only screen (max-width: 1200px){
+
+}
+
+/* Strech about and stack education */
+@media only screen (max-width: 1000px){
+
+}
+
 
