@@ -92,6 +92,10 @@ p a:hover{
 	cursor: pointer;
 }
 
+ul{
+	padding: 0px;
+}
+
 /* navigation
 ======================================================= */
 #nav li {
@@ -167,6 +171,7 @@ p a:hover{
 .inner-list{
 	margin: 0px;
 	margin-bottom: 16px;
+	padding-left: inherit;
 }
 
 .inner-list li{
@@ -257,7 +262,7 @@ p a:hover{
 	padding-right: 5%;
 }
 .school-right{
-	padding-left: 5%;
+	padding-left: 10%;
 	border-left: 1px solid #BBBBBB;
 }
 
@@ -347,7 +352,13 @@ p a:hover{
 	height: 100%;
 	overflow: auto;
 }
-
+.overlay p{
+	visibility: hidden;
+	transition: .5s;
+}
+.project-block:hover p{
+	visibility: visible;
+}
 
 
 /* Contact
@@ -369,88 +380,5 @@ p a:hover{
 
 #contact span{
 	text-align: center;
-	margin: 25px;
+	margin: 0px 25px;
 }
-
-
-
-/* Responsive content for tablet sizes
-======================================================= */
-
-/* strech work experience, slightly about, skills, and contact */
-@media only screen and (max-width: 1200px){
-	.center{
-		width: 100%;
-	}
-	#profile{
-		margin-left: 10%;
-	}
-
-	#description{
-		padding-left: 10%;
-		padding-right: 10%;
-	}
-
-	#skills{
-		width: 75%;
-	}
-
-	#contact-info{
-		width: 60%;
-	}
-}
-
-/* Strech about, slight stretch skills and contact, stack education*/
-@media only screen and (max-width: 1000px){
-	#profile{
-		margin-left: 2%;
-	}
-	#description{
-		padding-left: 2%;
-		padding-right: 2%;
-	}
-
-	#skills{
-		width: 85%;
-	}
-
-	.school-container{
-		float: none;
-	    width: 100%;
-	    margin: auto;
-	    margin-bottom: 75px;
-	    text-align: center;
-	}
-	.school-left{
-		padding: 0px;
-		margin: 0px;
-	}
-	.school-right{
-		padding: 0px;
-		border: none;
-		margin: 0px;
-	}
-	#courses{
-		width: max-content;
-		margin: auto;
-		margin-bottom: 16px;
-		text-align: left;
-	}
-
-	#contact-info{
-		width: 70%;
-	}
-}
-
-/* Stretch skills and contact */
-@media only screen and (max-width: 800px){
-	#skills{
-		width: 100%;
-	}
-
-	#contact-info{
-		width: 80%;
-	}
-}
-
-

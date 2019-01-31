@@ -1,0 +1,120 @@
+/* Responsive content for tablet-ish sizes
+======================================================= */
+
+/* strech work experience, slightly about, skills, and contact */
+@media only screen and (max-width: 1200px){
+	.center{
+		width: 100%;
+	}
+	#profile{
+		margin-left: 10%;
+	}
+
+	#description{
+		padding-left: 10%;
+		padding-right: 10%;
+	}
+
+	#skills{
+		width: 75%;
+	}
+
+	#contact-info{
+		width: 60%;
+	}
+}
+
+/* Strech about, slight stretch skills and contact, stack education*/
+@media only screen and (max-width: 1000px){
+	#profile{
+		margin-left: 2%;
+	}
+	#description{
+		padding-left: 2%;
+		padding-right: 2%;
+	}
+
+	#skills{
+		width: 85%;
+	}
+
+	.school-container{
+		float: none;
+	    width: 100%;
+	    margin: auto;
+	    margin-bottom: 75px;
+	    text-align: center;
+	}
+	.school-left{
+		padding: 5%;
+		margin: 0px;
+	}
+	.school-right{
+		padding: 0px;
+		border: none;
+		margin: 0px;
+	}
+	#courses{
+		width: max-content;
+		margin: auto;
+		margin-bottom: 16px;
+		text-align: left;
+	}
+
+	#contact-info{
+		width: 70%;
+	}
+}
+
+/* Stretch skills and contact */
+@media only screen and (max-width: 800px){
+	#skills{
+		width: 100%;
+	}
+
+	#contact-info{
+		width: 80%;
+	}
+	.school-left{
+		padding: 2%;
+	}
+}
+
+
+/* need to shink title page text sizes a bit here */
+@media only screen and (max-width: 710px){
+	#title-block h1{
+		font-size: 4.75em;
+	}
+	#title-block h3{
+		font-size: 1.35em;
+	}
+}
+
+/* Responsive content for phone sizes
+======================================================= */
+
+/* shrink title page text and stretch nav*/
+@media only screen and (max-width: 480px){
+	#title-block h1{
+		font-size: 3.5em;
+	}
+	#title-block h3{
+		font-size: 1.2em;
+	}
+
+	#nav li {
+		margin: 0px;
+		width: 23%;
+	}
+}
+
+/* stack contact info */
+@media only screen and (max-width: 450px){
+	#contact span{
+		display: block;
+	}
+	#contact-info{
+		height: 100px;
+	}
+}
