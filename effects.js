@@ -29,8 +29,9 @@ function setSectionLocations(){
 }
 
 function styleChange(){
+
 	//get scroll position
-	var scroll = document.getElementsByTagName("html")[0].scrollTop;
+	var scroll = getScrollPos();
 	//get nav bar
 	var nav = document.getElementsByTagName("nav")[0];
 
@@ -69,7 +70,7 @@ function sleep(ms) {
 //Scroll to the destination over the corse of duration (ms)
 async function smoothScroll(dest, duration){
 	var target = section_locations[dest];
-	var scroll = document.getElementsByTagName("html")[0].scrollTop;
+	var scroll = getScrollPos();
 	var delta = (target - scroll) / (duration / 5);
 
 	for(var i = 0; i < duration / 5; i++){
@@ -94,6 +95,11 @@ function setBarWidths(){
 	for(var i = 0; i < rows.length; i++){
 		rows[i].style.width = "" + rows[i].innerHTML;
 	}
+}
+
+//function to get the scroll position that works in all browsers
+function getScrollPos(){
+	return Math.max(document.getElementsByTagName("body")[0].scrollTop, document.getElementsByTagName("html")[0].scrollTop, window.pageYOffset)
 }
 
 
